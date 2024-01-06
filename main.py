@@ -1,11 +1,11 @@
-import json, requests, smtplib, os
+import requests, smtplib
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 from time import sleep
 from email.mime.text import MIMEText
 from datetime import datetime
 from pytz import timezone
-
+import config
 
 def get_template(items):
     text_start = """
@@ -43,8 +43,8 @@ def get_template(items):
 
 
 def send_email(results):
-    sender = os.environ['EMAIL_ADDRESS']
-    password = os.environ['EMAIL_PASSWORD']
+    sender = config.settings['EMAIL_ADDRESS']
+    password = config.settings['EMAIL_PASSWORD']
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()

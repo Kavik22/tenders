@@ -154,7 +154,17 @@ def get_data():
 
 
 def main():
-    get_data()
+    results = {
+        'number': '123546879',
+        'object_of_purchase': 'test',
+        'link': 'https://www.youtube.com/watch?v=XjayvZimByc',
+        'starting_price': '12302',
+        'posting_date': '12.12.2005',
+        'update_date': '12.12.2005',
+        'application_deadline': '12.12.2005'
+    }
+    send_email(results)
+    # get_data()
 
 
 if __name__ == '__main__':

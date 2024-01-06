@@ -49,7 +49,9 @@ def send_email(results):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
 
-    text = get_template(results)
+    # text = get_template(results)
+    text = '<h1>test</h1>'
+
 
     try:
         server.login(sender, password)
@@ -157,7 +159,7 @@ def main():
     results = {
         'number': '123546879',
         'object_of_purchase': 'test',
-        'link': 'https://www.youtube.com/watch?v=XjayvZimByc',
+        'link': 'https://www.youtube.com/',
         'starting_price': '12302',
         'posting_date': '12.12.2005',
         'update_date': '12.12.2005',

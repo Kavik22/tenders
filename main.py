@@ -156,9 +156,10 @@ def get_data():
 
 
 def main():
+    print('start request')
     res = requests.get('https://zakupki.gov.ru/epz/order/extendedsearch/results.html')
     print(res.status_code)
-
+    print('end request')
 
     # get_data()
 

@@ -49,8 +49,8 @@ def send_email(results):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
 
-    # text = get_template(results)
-    text = '<h1>test</h1>'
+    text = get_template(results)
+
 
 
     try:
@@ -156,16 +156,10 @@ def get_data():
 
 
 def main():
-    results = {
-        'number': '123546879',
-        'object_of_purchase': 'test',
-        'link': 'https://www.youtube.com/',
-        'starting_price': '12302',
-        'posting_date': '12.12.2005',
-        'update_date': '12.12.2005',
-        'application_deadline': '12.12.2005'
-    }
-    send_email(results)
+    res = requests.get('https://zakupki.gov.ru/epz/order/extendedsearch/results.html')
+    print(res.status_code)
+
+
     # get_data()
 
 

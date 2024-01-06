@@ -157,8 +157,11 @@ def get_data():
 
 def main():
     print('start request')
-    res = requests.get('https://zakupki.gov.ru/epz/order/extendedsearch/results.html')
-    print(res.status_code)
+    try:
+        res = requests.get('https://zakupki.gov.ru/epz/order/extendedsearch/results.html')
+        print(res.status_code)
+    except Exception as ex:
+        print(ex)
     print('end request')
 
     # get_data()
